@@ -1,8 +1,9 @@
 name: Update Docker Hub Description
 
 on:
-  push:
-    branches: [ master ]
+  workflow_dispatch:
+#  push:
+#    branches: [ master ]
 
 jobs:
   build-and-push:
@@ -16,6 +17,6 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-          repository: lacledeslan/gamesvr-tf2classic
+          repository: beepsterr/gamesvr-tf2classic
           short-description: "Team Fortress 2 Classic Dedicated Server"
           readme-filepath: ./README.md
